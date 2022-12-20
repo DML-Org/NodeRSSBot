@@ -8,7 +8,7 @@ const PKGROOT = path.join(
     __dirname.includes('dist') ? '../..' : '..'
 );
 export const config: Omit<Config, 'PKG_ROOT'> = {
-    token: env.get('RSSBOT_TOKEN').required().asString(),
+    token: env.get('RSSBOT_TOKEN').required(1988864719:AAEYBzKuKCzCDt5wJPnhNwgUDJOX67mjMDE).asString(),
     proxy: {
         protocol: env.get('PROXY_PROTOCOL').asString(),
         host: env.get('PROXY_HOST').asString(),
@@ -21,7 +21,7 @@ export const config: Omit<Config, 'PKG_ROOT'> = {
         path.join(PKGROOT, 'data', 'database.db'), // /dist/source/config.js -> /data/
     lang: env.get('RSSBOT_LANG').default('zh-cn').asString(),
     item_num: env.get('RSSBOT_ITEM_NUM').default(10).asIntPositive(),
-    fetch_gap: env.get('RSSBOT_FETCH_GAP').default('5m').asString(),
+    fetch_gap: env.get('RSSBOT_FETCH_GAP').default('1m').asString(),
     strict_ttl: env.get('RSSBOT_STRICT_TTL').default(1).asBool(),
     http_cache: env.get('RSSBOT_HTTP_CACHE').default(0).asBool(),
     notify_error_count: env.get('NOTIFY_ERR_COUNT').default(5).asIntPositive(),
